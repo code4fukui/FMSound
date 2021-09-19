@@ -8,15 +8,13 @@
 ```js
 import { FMSound } from "./FMSound.js";
 
-onload = () => {
-  const fmsound = new FMSound();
-  let tone = null;
-  btnsound.ondown = () => {
-    tone = fmsound.play(440);
-  };
-  btnsound.onup = () => {
-    tone.stop();
-  };
+const fmsound = new FMSound();
+let tone = null;
+btnsound.ondown = () => {
+  tone = fmsound.play(440);
+};
+btnsound.onup = () => {
+  tone.stop();
 };
 ```
 
