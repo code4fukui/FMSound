@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>FM音源 on WebAudio</title>
+</head><body>
+
+<button id=btnsound>PLAY</button>
+
+<script type="module">
+/**
+ * 「Web Audio APIでFMシンセを書く - わかるかなフロントエンド」を調整
+ * https://m0t0k1w.tumblr.com/post/121737581743/web-audio-api-fm
+ */
+
+onload = () => {
+  let ctx = null;
+  let carrier, modulator;
+  let modulatorGain, carrierGain, feedbackGain;
+  btnsound.onmousedown = () => {
+    ctx = ctx || new AudioContext();
+    modulator = ctx.createOscillator();
+    carrier = ctx.createOscillator();
+
+    modulatorGain = ctx.createGain();
+    carrierGain = ctx.createGain();
+    feedbackGain = ctx.createGain();
+
+    modulator.connect(modulatorGain);
+    modulatorGain.connect(carrier.frequency);
+    carrier.connect(carrierGain);
+    carrierGain.connect(ctx.destination);
+    modulator.connect(feedbackGain);
+    feedbackGain.connect(modulator.frequency);
+
+    const freq = 440;
+    modulator.type = "sine";
+    carrier.type = "sine";
+    modulator.frequency.value = 3.17 * freq;
+    carrier.frequency.value = 1 * freq;
+    feedbackGain.gain.value = 0.1;
+    modulatorGain.gain.value = (60 / 100) * 1024;
+    carrierGain.gain.value = (99 / 100);
+    modulator.start(0);
+    carrier.start(0);
+
+    const now = ctx.currentTime;
+    const mattack = 0, mdecay = 0.5, msustain = 0.3, mrelease = 0.5;
+    const cattack = 0, cdecay = 0.3, csustain = 0.7, crelease = 0.4;
+    const modulatorRootValue = modulatorGain.gain.value;
+    modulatorGain.gain.cancelScheduledValues(0);
+    modulatorGain.gain.setValueAtTime(0.0, now);
+    modulatorGain.gain.linearRampToValueAtTime(modulatorRootValue, now + mattack);
+    modulatorGain.gain.linearRampToValueAtTime(msustain + modulatorRootValue, now + mattack + mdecay);
+    const carrierRootValue = carrierGain.gain.value;
+    carrierGain.gain.cancelScheduledValues(0);
+    carrierGain.gain.setValueAtTime(0.0, now);
+    carrierGain.gain.linearRampToValueAtTime(carrierRootValue, now + cattack);
+    carrierGain.gain.linearRampToValueAtTime(csustain + carrierRootValue, now + cattack + cdecay);
+  };
+
+  btnsound.onmouseup = () => {
+    const now = ctx.currentTime;
+    const mattack = 0, mdecay = 0.5, msustain = 0.3, mrelease = 0.5;
+    const cattack = 0, cdecay = 0.3, csustain = 0.7, crelease = 0.4;
+    const modulatorRootValue = modulatorGain.gain.value;
+    modulatorGain.gain.cancelScheduledValues(0);
+    modulatorGain.gain.setValueAtTime(modulatorRootValue, now);
+    modulatorGain.gain.linearRampToValueAtTime(0.0, now + mrelease);
+
+    const carrierRootValue = carrierGain.gain.value;
+    carrierGain.gain.cancelScheduledValues(0);
+    carrierGain.gain.setValueAtTime(carrierRootValue, now);
+    carrierGain.gain.linearRampToValueAtTime(0.0, now + mrelease);
+    modulator.stop(now + mrelease);
+    carrier.stop(now + mrelease);
+  };
+};
+</script>
+
+</body></html>

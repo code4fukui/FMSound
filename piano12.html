@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>12音平均律</title>
+</head><body>
+
+<h1>12音平均律</h1>
+<div id=container></div>
+
+<script type="module">
+import { makePiano } from "./makePiano.js";
+
+const n = 12;
+
+container.appendChild(makePiano(n));
+</script>
+
+<style>
+body {
+  padding: 3em 1em;
+}
+fast-button {
+  display: inline-block;
+  border: 2px solid #333;
+  padding: .2em;
+  margin: .1em;
+  text-align: center;
+}
+fast-button:nth-child(2), fast-button:nth-child(4), fast-button:nth-child(7), fast-button:nth-child(9), fast-button:nth-child(11) {
+  background-color: black;
+  color: white;
+}
+</style>
+  
+</body></html>

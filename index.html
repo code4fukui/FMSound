@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>FM音源 on WebAudio</title>
+</head><body>
+
+<script type="module" src="https://code4fukui.github.io/fast-button/fast-button.js"></script>
+
+<fast-button id=btnsound>PLAY</fast-button>
+
+<script type="module">
+import { FMSound } from "./FMSound.js";
+
+onload = () => {
+  const fmsound = new FMSound();
+  let tone = null;
+  btnsound.ondown = () => {
+    tone = fmsound.play(440);
+  };
+  btnsound.onup = () => {
+    tone.stop();
+  };
+};
+</script>
+
+<style>
+body {
+  padding: 3em 1em;
+}
+fast-button {
+  border: 2px solid #333;
+  padding: 2em;
+}
+</style>
+
+</body></html>
