@@ -27,13 +27,13 @@ const makePiano = (n, fixed = 0) => {
     }
     const nk = parseInt(e.key);
     if (e.key == nk) {
-      container.childNodes[nk - 1]?.ondown();
+      container.childNodes[nk ? nk - 1 : n]?.ondown();
     }
   };
   onkeyup = (e) => {
     const nk = parseInt(e.key);
     if (e.key == nk) {
-      container.childNodes[nk - 1]?.onup();
+      container.childNodes[nk ? nk - 1 : n]?.onup();
     }
   };
   return container;

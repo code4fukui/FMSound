@@ -20,9 +20,14 @@ btnsound.onup = () => {
 
 ## demo
 
-- [5音平均律](https://code4fukui.github.io/FMSound/piano5.html)
-- [7音平均律](https://code4fukui.github.io/FMSound/piano7.html)
-- [12音平均律](https://code4fukui.github.io/FMSound/piano12.html)
+- [5平均律](https://code4fukui.github.io/FMSound/piano5.html)
+- [6平均律](https://code4fukui.github.io/FMSound/piano6.html)
+- [7平均律](https://code4fukui.github.io/FMSound/piano7.html)
+- [8平均律](https://code4fukui.github.io/FMSound/piano8.html)
+- [9平均律](https://code4fukui.github.io/FMSound/piano9.html)
+- [10平均律](https://code4fukui.github.io/FMSound/piano10.html)
+- [11平均律](https://code4fukui.github.io/FMSound/piano11.html)
+- [12平均律](https://code4fukui.github.io/FMSound/piano12.html)
 
 ## blog
 
