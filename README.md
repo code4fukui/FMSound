@@ -3,6 +3,23 @@
 - [FM音源テスト](https://code4fukui.github.io/FMSound/index.html)
 - [FM音源ESモジュール](FMSound.js)
 
+## usage
+
+```js
+import { FMSound } from "./FMSound.js";
+
+onload = () => {
+  const fmsound = new FMSound();
+  let tone = null;
+  btnsound.ondown = () => {
+    tone = fmsound.play(440);
+  };
+  btnsound.onup = () => {
+    tone.stop();
+  };
+};
+```
+
 ## demo
 
 - [5音平均律](https://code4fukui.github.io/FMSound/piano5.html)
