@@ -11,7 +11,7 @@ import { FMSound } from "./FMSound.js";
 const fmsound = new FMSound();
 let tone = null;
 btnsound.ondown = () => {
-  tone = fmsound.play(440);
+  tone = fmsound.play({ freq: 440 });
 };
 btnsound.onup = () => {
   tone.stop();
