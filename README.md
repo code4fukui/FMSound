@@ -12,3 +12,9 @@
 ## blog
 
 https://fukuno.jig.jp/3343
+
+## 出典
+
+- [Web Audio APIでFMシンセを書く - わかるかなフロントエンド](https://m0t0k1w.tumblr.com/post/121737581743/web-audio-api-fm)
+
+
