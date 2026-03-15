@@ -1,5 +1,7 @@
 # FMSound
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 FMSound is a JavaScript library that allows you to create FM (Frequency Modulation) synthesizer sounds using the Web Audio API.
 
 ## Demo
