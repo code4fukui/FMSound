@@ -1,9 +1,19 @@
 # FMSound
 
-- [FM音源テスト](https://code4fukui.github.io/FMSound/index.html)
-- [FM音源ESモジュール](FMSound.js)
+FMSound is a JavaScript library that allows you to create FM (Frequency Modulation) synthesizer sounds using the Web Audio API.
 
-## usage
+## Demo
+- [FM Sound Test](https://code4fukui.github.io/FMSound/index.html)
+- Demos with different equal temperaments: [5-tone](https://code4fukui.github.io/FMSound/piano5.html), [6-tone](https://code4fukui.github.io/FMSound/piano6.html), [7-tone](https://code4fukui.github.io/FMSound/piano7.html), [8-tone](https://code4fukui.github.io/FMSound/piano8.html), [9-tone](https://code4fukui.github.io/FMSound/piano9.html), [10-tone](https://code4fukui.github.io/FMSound/piano10.html), [11-tone](https://code4fukui.github.io/FMSound/piano11.html), [12-tone](https://code4fukui.github.io/FMSound/piano12.html)
+
+## Features
+- FM sound synthesis using the Web Audio API
+- Customizable parameters for the modulator and carrier oscillators, including frequency ratios and gains
+- Envelope control for the modulator and carrier signals
+- Demos showcasing different equal temperament scales
+
+## Usage
+To use the FMSound library, import the `FMSound` class and create a new instance:
 
 ```js
 import { FMSound } from "./FMSound.js";
@@ -18,23 +28,5 @@ btnsound.onup = () => {
 };
 ```
 
-## demo
-
-- [5平均律](https://code4fukui.github.io/FMSound/piano5.html)
-- [6平均律](https://code4fukui.github.io/FMSound/piano6.html)
-- [7平均律](https://code4fukui.github.io/FMSound/piano7.html)
-- [8平均律](https://code4fukui.github.io/FMSound/piano8.html)
-- [9平均律](https://code4fukui.github.io/FMSound/piano9.html)
-- [10平均律](https://code4fukui.github.io/FMSound/piano10.html)
-- [11平均律](https://code4fukui.github.io/FMSound/piano11.html)
-- [12平均律](https://code4fukui.github.io/FMSound/piano12.html)
-
-## blog
-
-https://fukuno.jig.jp/3343
-
-## 出典
-
-- [Web Audio APIでFMシンセを書く - わかるかなフロントエンド](https://m0t0k1w.tumblr.com/post/121737581743/web-audio-api-fm)
-
-
+## License
+This project is licensed under the MIT License.
