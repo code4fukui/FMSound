@@ -1,11 +1,10 @@
 # FMSound
 
-「Web Audio APIでFMシンセを書く」をJavaScriptライブラリ化したものです。FMサウンドを生成できます。
+FMSound は、Web Audio APIを使ってFM (Frequency Modulation) 音源を作成できるJavaScriptライブラリです。
 
 ## デモ
-
 - [5平均律](https://code4fukui.github.io/FMSound/piano5.html)
-- [6平均律](https://code4fukui.github.io/FMSound/piano6.html)
+- [6平均律](https://code4fukui.github.io/FMSound/piano6.html) 
 - [7平均律](https://code4fukui.github.io/FMSound/piano7.html)
 - [8平均律](https://code4fukui.github.io/FMSound/piano8.html)
 - [9平均律](https://code4fukui.github.io/FMSound/piano9.html)
@@ -14,13 +13,11 @@
 - [12平均律](https://code4fukui.github.io/FMSound/piano12.html)
 
 ## 機能
-
-- FMサウンドの生成
-- 任意の周波数でFMサウンドを出力
+- FM音源の生成
+- 任意の周波数でFM音源を出力
 - アタック/ディケイ/サスティン/リリース機能
 
 ## 使い方
-
 ```js
 import { FMSound } from "./FMSound.js";
 
@@ -35,5 +32,4 @@ btnsound.onup = () => {
 ```
 
 ## ライセンス
-
 MIT License

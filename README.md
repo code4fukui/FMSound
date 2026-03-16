@@ -31,4 +31,4 @@ btnsound.onup = () => {
 ```
 
 ## License
-This project is licensed under the MIT License.
+MIT License — see [LICENSE](LICENSE).
